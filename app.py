@@ -29,7 +29,7 @@ def submit():
 
         Total_Income_Log = np.log(float(request.form["ApplicantIncome"] + request.form["CoapplicantIncome"]) )
         Loan_Amount_Term_Log =  np.log( float(request.form["Loan_Amount_Term_Log"]) )
-        LoanAmountLog =  np.log( float(request.form["LoanAmountLog"]))
+        LoanAmountLog =  np.log( float(request.form["LoanAmountLog"]) / 1000)
         ApplicantIncomeLog =   np.log( float(request.form["ApplicantIncome"]) ) 
  
       
