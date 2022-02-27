@@ -12,6 +12,9 @@ loan_model = pickle.load(open('models/saveloanmodel.sav' , 'rb'))
 @app.route("/")
 def hello():
     return render_template ("index.html")
+@app.route("/form")
+def create():
+    return render_template ("prediction_form.html")
 
 @app.route("/predict", methods = ['POST'])
 def submit():
@@ -38,7 +41,7 @@ def submit():
         result = loan_model.predict([[ Gender,	Married,	Dependents,	Education,	Self_Employed,	Credit_History,	Property_Area,	ApplicantIncomeLog,	LoanAmountLog,	Loan_Amount_Term_Log,	Total_Income_Log]])
 
     #.py -> HTML
-    return render_template ("index.html",**locals())
+    return render_template ("result.html",**locals())
 
 
 
