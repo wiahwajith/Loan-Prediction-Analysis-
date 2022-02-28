@@ -33,19 +33,16 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Loan Progress {{ name }}</h2>
-                    {% if(result[0]): %}
-
+                    <div class="img">
+                        <img  class="mx-auto d-block" src="{{ url_for('static', filename='img/approved.jpg') }}"  style="float: right;"  width="100" alt="approve image">
+                    </div>
+                    <div >
+                        
                         <h5>dear {{ name }},</h5>
-                        <P> your loan is approved, now ypu successfully eligible amount of {{ Loan_Amount_Term_Log }} House loan at Dream finance  </P>
+                        <P> your loan is approved, now ypu successfully eligible amount of {{ LoanAmountValue }} House loan at Dream finance  </P>
                         <button class="btn btn--radius-2 btn--blue" type="submit"> Apply Loan</button>
                         <button class="btn btn--radius-2 btn--blue" type="submit"> Eligible Report</button>
-                    {% else : %}
-
-                        
-                    <h5>dear {{ name }},</h5>
-                    <P> your loan is disapproved, you are not eligible  for amount of {{ Loan_Amount_Term_Log }} House loan at Dream finance  </P>
-                    <button class="btn btn--radius-2 btn--blue" type="submit"> Cancel </button>
-                    {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

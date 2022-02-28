@@ -29,6 +29,7 @@ def submit():
         Self_Employed = request.form["Self_Employed"]
         Credit_History = request.form["Credit_History"]
         Property_Area = request.form["Property_Area"]
+        LoanAmountValue = request.form["LoanAmountLog"]
 
         Total_Income_Log = np.log(float(request.form["ApplicantIncome"] + request.form["CoapplicantIncome"]) )
         Loan_Amount_Term_Log =  np.log( float(request.form["Loan_Amount_Term_Log"]) )
@@ -41,7 +42,10 @@ def submit():
         result = loan_model.predict([[ Gender,	Married,	Dependents,	Education,	Self_Employed,	Credit_History,	Property_Area,	ApplicantIncomeLog,	LoanAmountLog,	Loan_Amount_Term_Log,	Total_Income_Log]])
 
     #.py -> HTML
-    return render_template ("result.html",**locals())
+    if(result[0]):
+        return render_template ("passResult.html",**locals())
+    else:
+        return render_template ("failResult.html",**locals())
 
 
 
