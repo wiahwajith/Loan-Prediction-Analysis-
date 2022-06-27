@@ -25,9 +25,13 @@
 
     <!-- Main CSS-->
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+
 </head>
 
 <body>
+
+    {% include "header.html" %}
+
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-4">
@@ -37,7 +41,7 @@
 
                     <Form action="/form" method="GET">
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Financial Company</label>
                                     <div class="rs-select2 js-select-simple select--no-search">
@@ -55,11 +59,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
-                                    <label class="label">Loan Type</label>
+                                    <label class="label">Apply loan Type</label>
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="Property_Area">
+                                        <select name="Property_Area" style="width:225px">
                                             <option disabled="disabled" selected="selected">Select Dependents</option>
                                             <option value="0"> Housing Finance </option>
                                             <option value="1" disabled> Education Loan</option>
@@ -81,6 +85,9 @@
             </div>
         </div>
     </div>
+
+    {% include "footer.html" %}
+
 
     <!-- Jquery JS-->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>

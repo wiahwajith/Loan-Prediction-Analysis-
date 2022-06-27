@@ -28,6 +28,8 @@
 </head>
 
 <body>
+    {% include "header.html" %}
+
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-4">
@@ -43,11 +45,14 @@
                           <p style="margin-bottom: 10px;">Thanks for using online credit have a nice day!.</p>
                         <button class="btn btn--radius-2 btn--blue" type="submit"> Apply Loan</button>
                         <button class="btn btn--radius-2 btn--blue" type="submit"> Eligible Report</button>
+                        <a class="btn btn--radius-2 btn--blue" href="/"> Cancel </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {% include "footer.html" %}
 
     <!-- Jquery JS-->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>

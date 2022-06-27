@@ -25,9 +25,14 @@
 
     <!-- Main CSS-->
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+
+
 </head>
 
 <body>
+
+  {% include "header.html" %}
+
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-4">
@@ -36,13 +41,13 @@
                     <h6>*all field required</h6>
                     <form method="POST" action="/predict">
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >First Name</label>
                                     <input class="input--style-4" type="text" name="username">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
@@ -57,13 +62,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >Credit History</label>
                                     <input class="input--style-4" type="text" name="Credit_History">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Married</label>
                                     <div class="p-t-10">
@@ -78,7 +83,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Property Area</label>
                                     <div class="rs-select2 js-select-simple select--no-search">
@@ -93,7 +98,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Education</label>
                                     <div class="p-t-10">
@@ -108,13 +113,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >Applicant Income</label>
                                     <input class="input--style-4" type="text" name="ApplicantIncome">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Self Employed</label>
                                     <div class="p-t-10">
@@ -132,25 +137,25 @@
 
                         </div>
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >Loan Amount</label>
                                     <input class="input--style-4" type="text" name="LoanAmountLog">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >Loan Amount Term</label>
                                     <input class="input--style-4" type="text" name="Loan_Amount_Term_Log">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label" >Coapplicant Income</label>
                                     <input class="input--style-4" type="text" name="CoapplicantIncome">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Dependents</label>
                                     <div class="rs-select2 js-select-simple select--no-search">
@@ -174,6 +179,8 @@
             </div>
         </div>
     </div>
+
+    {% include "footer.html" %}
 
     <!-- Jquery JS-->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
